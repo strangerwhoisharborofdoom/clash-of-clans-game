@@ -1,0 +1,13 @@
+name: tower-defense-game
+
+services:
+    app:
+        image: tower-defense-game
+        container_name: tower-defense-game
+        build:
+            context: .
+        volumes:
+            - .:/app
+            - /app/node_modules
+        ports:
+            - 3000:5173
