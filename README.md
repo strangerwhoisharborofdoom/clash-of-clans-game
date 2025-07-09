@@ -16,7 +16,7 @@ The project is written with Phaser JS and Vite. To run the project locally, foll
 1. Run `npm run dev` to start the development server
 
 ## License
-The Textwire project is licensed under the [MIT License](https://github.com/SerhiiChoGames/tower-defense/blob/master/LICENSE)
+The project is licensed under the [MIT License](https://github.com/SerhiiChoGames/tower-defense/blob/master/LICENSE)
 
 ## Contribute
 
