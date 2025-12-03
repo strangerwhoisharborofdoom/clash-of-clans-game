@@ -1,97 +1,47 @@
-# Tower Defense Game
+“You are my web-dev assistant working inside the browser.
+I have a GitHub repository open that contains my personal/portfolio website. Your job is to help me add a new page for ‘GCUDL – Garden City Data Engineering Lab’ and connect it to the site’s routing.
+Steps:
 
-![Tower Defense Game](./public/assets/logo.png)
+Inspect the GitHub repo structure to detect which framework or stack the site uses (pure HTML/CSS/JS, React, Next.js, etc.).
 
-Open source game written with Phaser JS where you need to build towers to kill the monsters they will try to destroy your castle.
+Create a new page or route called GCUDL that can be opened via a clean URL path such as /del or /gcudl, following the routing conventions already used in this repo.
 
-> [!WARNING]
-> The game is not finished yet, but you can play it [here](https://serhiichogames.github.io/tower-defense/)
+Add sample content for the Garden City Data Engineering Lab: a heading with ‘GCUDL – Garden City Data Engineering Lab’, 2–3 short paragraphs about a data/AI-focused lab at Garden City University, and 3–5 bullet points listing possible activities (projects, datasets, collaborations), making sure the text is generic and does not copy any copyrighted website.
 
-## Installation
-The project is written with Phaser JS and Vite. To run the project locally, follow the steps below:
+Match the styling and color theme of the existing website: reuse the same layout components, typography, navigation, and footer patterns already present in the repo.
 
-1. Clone the repository
-1. Navigate to the project directory
-1. Run `npm install` to install the dependencies
-1. Run `npm run dev` to start the development server
+Add a navigation link or button to this new GCUDL page from the main menu or a relevant section, consistent with current nav design.
 
-## License
-The project is licensed under the [MIT License](https://github.com/SerhiiChoGames/tower-defense/blob/master/LICENSE)
+Show me the exact code changes as separate blocks:
 
-## Contribute
+New/updated route configuration.
 
-### NPM Commands
-If you a container engine, do these commands inside of a container.
+New page component or HTML file for GCUDL.
 
-#### Install Dependencies
-```bash
-npm i
-```
+Any CSS or component imports needed.
 
-#### Watch File Changes
-```bash
-npm run dev
-```
+Before finalizing, quickly check that the internal links and relative paths are correct, and that going to the chosen path (for example /del) will load the GCUDL page.
+Output format:
 
-Navigate to `http://localhost:5173/tower-defense/` to see your documentation if you run project locally. For containers, visit `http://localhost:3000/tower-defense/`.
+A short explanation of what stack you detected.
 
-### With Container Engine
-If you use a container engine like [🦦 Podman](https://podman.io/) or [🐳 Docker](https://app.docker.com/), here are the steps that you can make:
+Code snippets for each file you changed (with filenames).
 
-#### Build an Image
-To build an image, navigate to the root of the project and run this command for Docker:
-```bash
-docker compose build
-```
-For Podman, run this:
-```bash
-podman-compose build
-```
+A one-paragraph checklist I can follow in VS Code to run and test the updated site locally.”
 
-#### Run the Container
-To run a container, navigate to the root of the project and run this command for Docker:
-```bash
-docker compose up -d
-```
-For Podman, run this:
-```bash
-podman-compose up -d
-```
+This gives Comet a “toon” personality (hands-on web-dev helper), clear steps, and structured output.​
 
-You can visit `http://localhost:3000/tower-defense/` to see the game running in container.
+3. Helpful websites and AI agents
+MDN Web Docs (URL & routing basics): For understanding and debugging paths like /del and how routing works in different setups.​
 
-#### Copy `node_modules` Locally
-To copy `node_modules` directory from the container to your local machine, run this command for Docker:
-```bash
-docker cp ago-docs:/app/node_modules .
-```
-For Podman, run this:
-```bash
-podman cp ago-docs:/app/node_modules .
-```
+GitHub + GitHub Copilot: Let Copilot suggest boilerplate for new routes/pages once the project is open in VS Code.​
 
-> [!NOTE]
-> `node_modules` is excluded from using volume in [compose.yml](compose.yml) file, that's why you need to copy it manually. It's done to prevent your local modules to be copied to Linux container, since it can create incompatibility issues between operating systems if you don't use Linux.
+StackBlitz or Replit: Spin up a quick running copy of the repo in the browser to live-test routing changes if local setup is slow.​
 
-#### Enter the Container
-To enter inside of the container, run this command for Docker:
-```bash
-docker compose exec app sh
-```
-For Podman, run this:
-```bash
-podman-compose exec app sh
-```
+AI/agent suggestions for Comet:
 
-You'll be able to run NPM commands inside of the container.
+“Repo Inspector” agent: Reads the open GitHub repo, identifies framework (React/Next/Vite/Plain HTML), and outputs a short map of routes, layout files, and theme CSS locations to guide where to plug in GCUDL.​
 
+“Routing Fixer” agent: Given the current router file (e.g., app/router.js, routes.jsx, or next.config.js), proposes a safe patch that adds a /del or /gcudl route and explains how it integrates.​
 
-#### Remove the Container
-Run this for Docker:
-```bash
-docker compose down
-```
-For Podman, run this:
-```bash
-podman-compose down
-```
+“Content & UI Polisher” agent: Takes the draft GCUDL page and rewrites the copy to be concise and professional, then suggests small UI tweaks (headings, spacing, cards) that still match the site’s theme.
