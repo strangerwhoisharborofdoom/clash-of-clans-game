@@ -1,47 +1,376 @@
-“You are my web-dev assistant working inside the browser.
-I have a GitHub repository open that contains my personal/portfolio website. Your job is to help me add a new page for ‘GCUDL – Garden City Data Engineering Lab’ and connect it to the site’s routing.
+# 🏰 Clash of Clans Configuration & Analytics System
+
+A structured configuration and data management repository for **Clash of Clans player statistics, clan management, war strategies, and API integration**.
+
+This project provides a foundation for developers to build **automation tools, analytics dashboards, and clan management systems** using Clash of Clans data.
+
+---
+
+# 📌 Overview
+
+This repository helps manage Clash of Clans data in a structured way.
+
+Key capabilities include:
+
+- Player data management
+- Clan statistics tracking
+- Clan war strategy planning
+- Clash of Clans API integration
+- Automation scripts
+- Data analysis tools
+
+This project is useful for:
+
+- Clan leaders managing wars
+- Developers building analytics tools
+- Data scientists analyzing gameplay data
+- Automation bots and dashboards
+
+---
+
+# 🧱 Repository Structure
+
+```
+clash-of-clans-config/
+│
+├── config/
+│   ├── players.json
+│   ├── clans.json
+│   ├── wars.json
+│   ├── leagues.json
+│   └── upgrades.json
+│
+├── scripts/
+│   ├── fetch_data.py
+│   ├── player_stats.py
+│   ├── clan_analysis.py
+│   ├── war_strategy.py
+│   └── leaderboard.py
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── docs/
+│   ├── api.md
+│   ├── setup.md
+│   └── strategy.md
+│
+├── assets/
+│   ├── images/
+│   └── diagrams/
+│
+├── .env.example
+├── requirements.txt
+├── LICENSE
+└── README.md
+```
+
+---
+
+# ⚙ Configuration Files
+
+The `config` folder contains structured JSON configuration files used by the system.
+
+Configuration types include:
+
+- Player information
+- Clan settings
+- War strategies
+- League participation
+- Upgrade planning
+
+---
+
+# 👤 Player Configuration
+
+File: `config/players.json`
+
+Example:
+
+```json
+{
+  "players": [
+    {
+      "name": "PlayerOne",
+      "tag": "#ABC123",
+      "townHallLevel": 14,
+      "role": "Leader",
+      "trophies": 5800,
+      "donations": 2500,
+      "warStars": 1200
+    },
+    {
+      "name": "PlayerTwo",
+      "tag": "#XYZ456",
+      "townHallLevel": 13,
+      "role": "Co-Leader",
+      "trophies": 5200,
+      "donations": 1900,
+      "warStars": 950
+    }
+  ]
+}
+```
+
+### Player Fields
+
+| Field | Description |
+|------|-------------|
+| name | Player in-game name |
+| tag | Unique player tag |
+| townHallLevel | Town Hall level |
+| role | Clan role |
+| trophies | Current trophies |
+| donations | Total donations |
+| warStars | War stars earned |
+
+---
+
+# 🛡 Clan Configuration
+
+File: `config/clans.json`
+
+Example:
+
+```json
+{
+  "clan": {
+    "name": "War Legends",
+    "tag": "#CLAN123",
+    "level": 18,
+    "warFrequency": "always",
+    "requiredTrophies": 2000,
+    "members": 50,
+    "location": "India",
+    "clanPoints": 45000
+  }
+}
+```
+
+### Clan Fields
+
+| Field | Description |
+|------|-------------|
+| name | Clan name |
+| tag | Clan tag |
+| level | Clan level |
+| warFrequency | War frequency |
+| requiredTrophies | Minimum trophies required |
+| members | Total clan members |
+| location | Clan region |
+| clanPoints | Total clan points |
+
+---
+
+# ⚔ War Strategy Configuration
+
+File: `config/wars.json`
+
+Example:
+
+```json
+{
+  "warStrategy": {
+    "attackOrder": [
+      "#PLAYER1",
+      "#PLAYER2",
+      "#PLAYER3",
+      "#PLAYER4"
+    ],
+    "baseTargets": {
+      "#PLAYER1": 1,
+      "#PLAYER2": 2,
+      "#PLAYER3": 3,
+      "#PLAYER4": 4
+    },
+    "backupTargets": {
+      "#PLAYER1": 2,
+      "#PLAYER2": 3
+    }
+  }
+}
+```
+
+Explanation:
+
+- **attackOrder** defines the sequence of attacks  
+- **baseTargets** assigns main targets  
+- **backupTargets** defines fallback targets  
+
+This helps maximize clan war efficiency.
+
+---
+
+# 🏆 League Configuration
+
+File: `config/leagues.json`
+
+Example:
+
+```json
+{
+  "league": {
+    "name": "Champion League I",
+    "trophyRange": "5000-5500",
+    "bonus": 300000
+  }
+}
+```
+
+---
+
+# 🔐 Environment Variables
+
+Create a `.env` file.
+
+Example:
+
+```
+COC_API_KEY=your_api_key
+CLAN_TAG=#CLAN123
+PLAYER_TAG=#PLAYER123
+REQUEST_TIMEOUT=30
+```
+
+---
+
+# 🌐 Clash of Clans API Integration
+
+Official developer portal:
+
+https://developer.clashofclans.com
+
+Example API request:
+
+```
+GET https://api.clashofclans.com/v1/clans/%23CLAN123
+```
+
+Example Python script:
+
+```python
+import requests
+
+url = "https://api.clashofclans.com/v1/clans/%23CLAN123"
+
+headers = {
+    "Authorization": "Bearer YOUR_API_KEY"
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.json())
+```
+
+---
+
+# 🚀 Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/username/clash-of-clans-config.git
+```
+
+Navigate to project folder:
+
+```
+cd clash-of-clans-config
+```
+
+Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+---
+
+# ▶ Running Scripts
+
+Fetch live data:
+
+```
+python scripts/fetch_data.py
+```
+
+Analyze clan statistics:
+
+```
+python scripts/clan_analysis.py
+```
+
+Analyze war strategy:
+
+```
+python scripts/war_strategy.py
+```
+
+Generate leaderboard:
+
+```
+python scripts/leaderboard.py
+```
+
+---
+
+# 📊 Data Analysis Features
+
+Supported analytics include:
+
+- Player trophy tracking
+- Clan growth analysis
+- War win rate calculation
+- Donation tracking
+- League performance metrics
+
+Future improvements may include:
+
+- Machine learning war prediction
+- Player performance ranking
+- Automated war target suggestions
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
 Steps:
 
-Inspect the GitHub repo structure to detect which framework or stack the site uses (pure HTML/CSS/JS, React, Next.js, etc.).
+1. Fork the repository  
+2. Create a new branch
 
-Create a new page or route called GCUDL that can be opened via a clean URL path such as /del or /gcudl, following the routing conventions already used in this repo.
+```
+git checkout -b feature-name
+```
 
-Add sample content for the Garden City Data Engineering Lab: a heading with ‘GCUDL – Garden City Data Engineering Lab’, 2–3 short paragraphs about a data/AI-focused lab at Garden City University, and 3–5 bullet points listing possible activities (projects, datasets, collaborations), making sure the text is generic and does not copy any copyrighted website.
+3. Commit your changes
 
-Match the styling and color theme of the existing website: reuse the same layout components, typography, navigation, and footer patterns already present in the repo.
+```
+git commit -m "Add feature"
+```
 
-Add a navigation link or button to this new GCUDL page from the main menu or a relevant section, consistent with current nav design.
+4. Push to GitHub
 
-Show me the exact code changes as separate blocks:
+```
+git push origin feature-name
+```
 
-New/updated route configuration.
+5. Open a Pull Request
 
-New page component or HTML file for GCUDL.
+---
 
-Any CSS or component imports needed.
+# 📜 License
 
-Before finalizing, quickly check that the internal links and relative paths are correct, and that going to the chosen path (for example /del) will load the GCUDL page.
-Output format:
+This project is licensed under the **MIT License**.
 
-A short explanation of what stack you detected.
+---
 
-Code snippets for each file you changed (with filenames).
+# ⚠ Disclaimer
 
-A one-paragraph checklist I can follow in VS Code to run and test the updated site locally.”
+This project is **not affiliated with Supercell**.
 
-This gives Comet a “toon” personality (hands-on web-dev helper), clear steps, and structured output.​
-
-3. Helpful websites and AI agents
-MDN Web Docs (URL & routing basics): For understanding and debugging paths like /del and how routing works in different setups.​
-
-GitHub + GitHub Copilot: Let Copilot suggest boilerplate for new routes/pages once the project is open in VS Code.​
-
-StackBlitz or Replit: Spin up a quick running copy of the repo in the browser to live-test routing changes if local setup is slow.​
-
-AI/agent suggestions for Comet:
-
-“Repo Inspector” agent: Reads the open GitHub repo, identifies framework (React/Next/Vite/Plain HTML), and outputs a short map of routes, layout files, and theme CSS locations to guide where to plug in GCUDL.​
-
-“Routing Fixer” agent: Given the current router file (e.g., app/router.js, routes.jsx, or next.config.js), proposes a safe patch that adds a /del or /gcudl route and explains how it integrates.​
-
-“Content & UI Polisher” agent: Takes the draft GCUDL page and rewrites the copy to be concise and professional, then suggests small UI tweaks (headings, spacing, cards) that still match the site’s theme.
+Clash of Clans is a trademark of **Supercell Oy**.  
+This repository is intended for **educational and development purposes only**.
